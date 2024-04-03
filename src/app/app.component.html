@@ -1,0 +1,25 @@
+<section>
+  <div class="container" [formGroup]="converterForm">
+    <h1 class="container-title">Currency Converter</h1>
+    <div class="converter">
+      <div class="converter-inner">
+        <select class="converter-inner__select" formControlName="fromCode">
+          <option *ngFor="let item of currentCurrencies()" [value]="item.code">{{item.code}}</option>
+        </select>
+        <input class="converter-inner__input" formControlName="fromValue" type="number"/>
+      </div>
+      <div class="divider">
+        <div class="divider-circle">
+          <img class="divider-circle__img"[src]="'assets/Group.svg'">
+        </div>
+      </div>
+      <div class="converter-inner">
+        <select class="converter-inner__select"  formControlName="toCode">
+          <option *ngFor="let item of currentCurrencies()" [value]="item.code">{{item.code}}</option>
+        </select>
+        <input class="converter-inner__input" formControlName="toValue" type="number"/>
+      </div>
+
+    </div>
+  </div>
+</section>
